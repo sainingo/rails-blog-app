@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: blog_app
+  database: blog_app_development
   password: Nat@1408
   username: postgres
   port: 6001
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: blog_app
+  database: blog_app_test
   password: Nat@1408
   username: postgres
   port: 6001
@@ -87,7 +87,7 @@ test:
 #
 production:
   <<: *default
-  database: blog_app
+  database: blog_app_production
   password: Nat@1408
   username: postgres
   port: 6001
