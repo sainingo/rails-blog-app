@@ -14,8 +14,6 @@ class CommentsTest < ApplicationSystemTestCase
     visit comments_url
     click_on 'New comment'
 
-    fill_in 'Author', with: @comment.author_id
-    fill_in 'Post', with: @comment.post_id
     fill_in 'Text', with: @comment.text
     click_on 'Create Comment'
 
@@ -27,8 +25,6 @@ class CommentsTest < ApplicationSystemTestCase
     visit comment_url(@comment)
     click_on 'Edit this comment', match: :first
 
-    fill_in 'Author', with: @comment.author_id
-    fill_in 'Post', with: @comment.post_id
     fill_in 'Text', with: @comment.text
     click_on 'Update Comment'
 

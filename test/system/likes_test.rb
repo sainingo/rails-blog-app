@@ -14,8 +14,6 @@ class LikesTest < ApplicationSystemTestCase
     visit likes_url
     click_on 'New like'
 
-    fill_in 'Author', with: @like.author_id
-    fill_in 'Post', with: @like.post_id
     click_on 'Create Like'
 
     assert_text 'Like was successfully created'
@@ -26,8 +24,6 @@ class LikesTest < ApplicationSystemTestCase
     visit like_url(@like)
     click_on 'Edit this like', match: :first
 
-    fill_in 'Author', with: @like.author_id
-    fill_in 'Post', with: @like.post_id
     click_on 'Update Like'
 
     assert_text 'Like was successfully updated'

@@ -14,7 +14,6 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on 'New post'
 
-    fill_in 'Author', with: @post.author_id
     fill_in 'Comments counter', with: @post.comments_counter
     fill_in 'Likes counter', with: @post.likes_counter
     fill_in 'Text', with: @post.text
@@ -29,7 +28,6 @@ class PostsTest < ApplicationSystemTestCase
     visit post_url(@post)
     click_on 'Edit this post', match: :first
 
-    fill_in 'Author', with: @post.author_id
     fill_in 'Comments counter', with: @post.comments_counter
     fill_in 'Likes counter', with: @post.likes_counter
     fill_in 'Text', with: @post.text
