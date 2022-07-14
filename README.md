@@ -1,68 +1,24 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# README
 
-# Blog Application with Rails
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
+Things you may want to cover:
 
+* Ruby version
 
-## Built With
+* System dependencies
 
-- Ruby
-- Ruby on rails
-- Postgresql
+* Configuration
 
-## Get Started
+* Database creation
 
-To get a clone of the project, run `git clone git@github.com:jssol/rails-blog-app.git && cd $_`
+* Database initialization
 
-### Available Scripts
+* How to run the test suite
 
-In the project directory, you can run:
+* Services (job queues, cache servers, search engines, etc.)
 
-**`Gem install rails`**
+* Deployment instructions
 
-Gets all the required dependencies of the projects.
-
-**`bundle install`**
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-
-## Authors
-
-<a href="https://github.com/sainingo" target="blank"><img align="center"
-      src="https://avatars.githubusercontent.com/u/32932447?s=40&v=4"
-      alt="adampithewan" height="50" width="50"/></a> **SANINGO**
-
-- GitHub: [@sainingo](https://github.com/sainingo)
-- Twitter: [@sainingo](https://www.linkedin.com/in/sainingo/)
-- LinkedIn: [sainingo](https://twitter.com/saningoInn)
-
-## Acknowledgments
-
-- [Microverse](https://www.microverse.org/)
-- External API from https://disease.sh/docs/#/
-- Original design idea (Ballhead App (Free PSDs)) by Nelson Sakwa [Website](<https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)>)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
+* ...
