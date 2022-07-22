@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.h2 {
+  margin-left: 5%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background: #555;
+  width: 400px;
+  border-radius: 10px;
+  color: #fff;
+  gap: 5px;
+  padding: 12px;
+  margin-left: 20px;
+}
+
+.card img {
+  width: 70px;
+  border-radius: 8px;
+  height: 70px;
+}
+
+.card p {
+  margin-left: 30%;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.post-card {
+  background: #f4f4f4;
+  border-radius: 8px;
+  width: 50%;
+}
+
+.show-user {
+  padding: 12px;
+}
+
+.show-user .btn {
+  padding: 12px 14px;
+  font-size: 16px;
+  border: none;
+  background: #777;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.comment {
+  background-color: #ddd;
+}

@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  # belongs_to :author, class_name: 'User'
+  belongs_to :user
   has_many :comments, class_name: 'Comment', foreign_key: 'post_id'
   has_many :likes, class_name: 'Like', foreign_key: 'post_id'
 
@@ -12,7 +13,7 @@ class Post < ApplicationRecord
   private
 
   def update_posts_counter
-    author.increment!(:posts_counter)
+    user.increment!(:posts_counter)
   end
 
   validates :title, presence: true, allow_blank: false, length: { maximum: 250 }

@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    @users = User.all
+  end
 
-  def show; end
-  # def index
-  #   @users = User.all
-  # end
-
-  # def show
-  #   @user = User.find(params[:id])
-  # end
+  def show
+    @user = User.includes(:posts).find(params[:id])
+  end
 end

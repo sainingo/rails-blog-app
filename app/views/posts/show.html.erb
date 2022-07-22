@@ -1,1 +1,37 @@
-<h1> posts show page</h1>
+<h1> Posts show page</h1>
+<br>
+
+ <ul>
+        <li>
+          <div class='post-card'>
+            <div>
+              <h3>
+                <%= @post.title %>
+              </h3>
+              <br>
+            </div>
+            <p>
+              <%= @post.text %>
+            </p>
+             <br>
+            <div>
+              <span>Comments:
+                <%= @post.comment_counter %>
+              </span>
+              <span> Likes:
+                <%= @post.likes_counter %>
+              </span>
+            </div>
+            <div class="comment">
+
+
+            <% @post.comments.each do |comment| %>
+              <p>
+            <%= comment.text %>
+            </p>
+            <% end %>
+
+            </div>
+          </div>
+        </li>      
+    </ul> 
