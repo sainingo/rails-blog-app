@@ -5,6 +5,10 @@ class Comment < ApplicationRecord
 
   after_save :update_comments_counter
 
+  def recent_comments
+    comments.order('created_at Des').limit(5)
+  end
+
   private
 
   def update_comments_counter
