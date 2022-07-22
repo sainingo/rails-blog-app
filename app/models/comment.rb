@@ -1,9 +1,8 @@
 class Comment < ApplicationRecord
-  # belongs_to :author, class_name: 'User'
   belongs_to :user
   belongs_to :post
 
-  after_save :update_comments_counter
+  after_save :update_post_comment_count
 
   def recent_comments
     comments.order('created_at Des').limit(5)
@@ -11,7 +10,7 @@ class Comment < ApplicationRecord
 
   private
 
-  def update_comments_counter
-    post.increment!(:comment_counter)
+  def update_post_comment_count
+    post.increment!(:comments_counter)
   end
 end

@@ -18,21 +18,19 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET /show' do
-    context 'when the page is loaded' do
-      before do
-        get '/users/1'
-      end
-      it 'returns a 200 status code' do
-        expect(response).to have_http_status(200)
-      end
-      it 'should render correct template' do
-        expect(response).to render_template(:show)
-      end
+  describe 'GET #show' do
+    before(:example) { get user_path(1) }
 
-      it 'should include correct placeholder text' do
-        expect(response.body).to include('show user data')
-      end
+    it 'should have correct response status' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'should render correct template' do
+      expect(response).to render_template(:show)
+    end
+
+    it 'should include correct placeholder text' do
+      expect(response.body).to include('show user data')
     end
   end
 end

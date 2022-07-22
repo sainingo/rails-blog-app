@@ -1,8 +1,8 @@
-<h1> posts show page</h1>
+<h1 class='m-4'> posts show page</h1>
 
  <ul>
         <li>
-          <div class='post-card'>
+          <div class='post-card m-4'>
             <div>
               <h3>
                 <%= @post.title %>
@@ -33,12 +33,20 @@
         </li>      
     </ul>
 
-     <h1>Leave your comment here...</h1>
+     <h1 class='m-4'>Leave your comment here...</h1>
   <%= form_with url: new_comment_user_post_path do |form| %>
-    <div class="mb-3">
+    <div class="m-4">
       <%= form.text_area :text, class: "form-control" %>
     </div>
-    <div class="mb-3">
+    <div class="m-4">
       <%= form.submit class: "btn btn-primary" %>
     </div>
   <% end %>
+
+   <%= form_with url: like_post_user_post_path do |form| %>
+    <div class="m-4">
+      <%= form.submit "Like" %>
+    </div>
+  <% end %>
+
+
