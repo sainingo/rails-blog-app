@@ -1,22 +1,21 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @posts = @user.posts
   end
 
   def show
-    @post = User.find(params[:user_id]).posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new
-    render :new, locals: { post: @post }
+    @post = Post.new
+    @user = current_user
   end
 
   def create
-    @user = User.find(params[:user_id])
-    add_post = @user.posts.new(post_params)
+    @post = current_user
+    add_post = @post.posts.new(post_params)
     add_post.comments_counter = 0
     add_post.likes_counter = 0
     respond_to do |format|
