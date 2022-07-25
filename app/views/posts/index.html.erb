@@ -1,4 +1,5 @@
-<h1>Posts section</h1>
+<h1>Posts</h1>
+
 <ul>
   <li>
     <div class="card">
@@ -13,3 +14,41 @@
   </li>
 </ul>
 
+  <ul>
+      <% @user.posts.each do |post| %>
+      <%= link_to   user_post_path(@user.id, post.id) do %>
+        <li>
+          <div class='post-card'>
+            <div>
+              <h3>
+                <%= post.title %>
+              </h3>
+            </div>
+            <p>
+              <%= post.text %>
+            </p>
+            <div>
+              <span>Comments:
+                <%= post.comments_counter %>
+              </span>
+              <span> Likes:
+                <%= post.likes_counter %>
+              </span>
+            </div>
+            <div class="comment">
+            
+            
+            <% post.comments.each do |comment| %>
+              <p>
+            <%= comment.text %>
+            </p>
+            <% end %>
+            
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <%= link_to 'Create-post', new_user_post_path, class:'btn btn-info' %>
