@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Post show', type: :feature do
   describe 'Post' do
     before(:each) do
-      @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/ESfEr8WpTjs', bio: 'Teacher from Mexico.', posts_counter: 0)
+      @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/ESfEr8WpTjs',
+                                bio: 'Teacher from Mexico.', posts_counter: 0)
       @first_user.save!
-      @second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/ESfEr8WpTjs', bio: 'Teacher from Poland.', posts_counter: 0)
+      @second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/ESfEr8WpTjs',
+                                 bio: 'Teacher from Poland.', posts_counter: 0)
       @second_user.save!
       visit root_path
 
@@ -20,7 +22,7 @@ RSpec.describe 'Post show', type: :feature do
 
       @comment1 = Comment.create(post: Post.first, text: 'Hi Tom!')
 
-    visit root_path
+      visit root_path
     end
 
     it 'shows posts title' do
@@ -29,33 +31,33 @@ RSpec.describe 'Post show', type: :feature do
     end
 
     it 'shows the person who wrote the post' do
-      user = User.first  
+      user = User.first
       expect(page).to have_content(user.name)
     end
 
     it 'shows number of comments' do
-        user = User.first  
-        expect(page).to have_content(user.name)
-      end
-  
-      it 'shows number of likes' do
-        user = User.first  
-        expect(page).to have_content(user.name)
-      end
-  
-      it 'can see the post\'s body.' do
-        user = User.first  
+      user = User.first
       expect(page).to have_content(user.name)
-      end
-  
-      it 'can see the username of each commentor.' do
-        user = User.first  
-        expect(page).to have_content(user.name)
-      end
-  
-      it 'can see the comments of each commentor.' do
-        user = User.first  
+    end
+
+    it 'shows number of likes' do
+      user = User.first
       expect(page).to have_content(user.name)
-      end
+    end
+
+    it 'can see the post\'s body.' do
+      user = User.first
+      expect(page).to have_content(user.name)
+    end
+
+    it 'can see the username of each commentor.' do
+      user = User.first
+      expect(page).to have_content(user.name)
+    end
+
+    it 'can see the comments of each commentor.' do
+      user = User.first
+      expect(page).to have_content(user.name)
+    end
   end
 end

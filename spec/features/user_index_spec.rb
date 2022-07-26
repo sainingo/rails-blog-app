@@ -32,4 +32,3 @@ RSpec.describe 'User Index Page', type: :feature do
     expect(subscribers[2]).to have_content 'Number of posts: 8'
   end
 end
-
