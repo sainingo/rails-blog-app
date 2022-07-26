@@ -1,32 +1,37 @@
 require 'rails_helper'
+load "#{Rails.root}/db/seeds.rb"
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
-    before(:each) { get user_posts_path(1) }
-    it 'should have a status code of 200 ' do
+    it 'should have a response status code of 200 for success' do
+      get users_path
       expect(response).to have_http_status(200)
     end
 
-    it 'should have a template of show' do
+    it 'should render correct template' do
+      get users_path
       expect(response).to render_template(:index)
     end
 
-    it 'should have place holder of posts#index' do
-      expect(response.body).to include('posts list')
+    it 'should have correct placeholder' do
+      get users_path
+      expect(response.body).to include('Microblog')
     end
   end
 
   describe 'GET /show' do
-    context 'when the page is loaded' do
-      it 'returns a 200 status code and render template for show' do
-        get '/users/1/posts', params: { id: 1 }
-        expect(response).to have_http_status(200)
-        expect(response).to render_template(:index)
-      end
-      it 'returns a 200 status code and render template for show' do
-        get '/users/1/posts', params: { id: 1 }
-        expect(response.body).to include('post')
-      end
+    before(:each) { get users_path(1) }
+
+    it 'should have a response status code of 200 for success' do
+      expect(response).to have_http_status(200)
+    end
+
+    it 'should render correct template' do
+      expect(response).to render_template(:index)
+    end
+
+    it 'should have correct placeholder' do
+      expect(response.body).to include('Microblog')
     end
   end
 end

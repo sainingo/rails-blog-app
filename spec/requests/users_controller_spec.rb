@@ -14,23 +14,23 @@ RSpec.describe 'Users', type: :request do
 
     it 'should have content on page that says -show for users' do
       get users_path
-      expect(response.body).to include('show users list')
+      expect(response.body).to include('users')
     end
   end
 
   describe 'GET #show' do
-    before(:example) { get user_path(1) }
-
+    # user = User.new(name: 'Tom', photo: 'image.png', bio: 'I am programmer')
+    before(:each) { get users_path(1) }
     it 'should have correct response status' do
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status(200)
     end
 
     it 'should render correct template' do
-      expect(response).to render_template(:show)
+      expect(response).to render_template(:index)
     end
 
     it 'should include correct placeholder text' do
-      expect(response.body).to include('show user data')
+      expect(response.body).to include('Microblog')
     end
   end
 end
