@@ -2,8 +2,47 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
   list-style: none;
+  text-decoration: none;
+}
+
+button {
+  background-color: #e71d36;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 9px;
+}
+
+.logo {
+  font-size: 30px;
+  color: #fff;
+  margin: 10px;
+}
+
+.notice {
+  background-color: rgb(241, 198, 198);
+}
+
+nav {
+  display: flex;
+  background-color: #777;
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 .h2 {
@@ -68,10 +107,52 @@ ul li {
   margin-top: 20px;
 }
 
-.comment {
-  background-color: #ddd;
-}
-
 .mb-3 {
   margin-bottom: 20px;
+}
+
+.log-in {
+  /* text-align: center; */
+  margin: 20px auto;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  max-width: 500px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 200px auto;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.data h2 {
+  margin-bottom: 15px;
+}
+
+.data input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.like-btn {
+  background-color: #2e294e;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.comment {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.alert {
+  background-color: #e09191;
+  border-radius: 8px;
+  width: 50%;
 }
