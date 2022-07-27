@@ -52,6 +52,7 @@ gem 'htmlbeautifier'
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
