@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 
   def create
     post = Post.find(params[:id])
-    like = current_user.likes.create(post: post)
+    like = current_user.likes.create(post:)
     if like.save!
       flash[:success] = 'like added'
     else
@@ -12,4 +12,3 @@ class LikesController < ApplicationController
     redirect_to user_post_path(@post)
   end
 end
-

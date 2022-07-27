@@ -20,4 +20,3 @@ class Post < ApplicationRecord
     user.decrement!(:posts_counter)
   end
 end
-
