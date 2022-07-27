@@ -15,6 +15,8 @@ gem 'pg', '~> 1.1'
 # Devise
 gem 'devise'
 
+gem 'cancancan'
+
 gem 'ffi', '~> 1.9', '>= 1.9.25'
 
 # Use the Puma web server [https://github.com/puma/puma]

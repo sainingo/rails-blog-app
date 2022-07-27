@@ -1,8 +1,5 @@
 class CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
-    @user = current_user
-  end
+  load_and_authorize_resource
 
   def create
     post = Post.find(params[:id])
@@ -14,6 +11,13 @@ class CommentsController < ApplicationController
       flash[:error] = 'Your comment was not added'
     end
     redirect_to user_post_path
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    flash[:success] = 'Your comment was deleted'
+    redirect_to root_url
   end
 
   private
