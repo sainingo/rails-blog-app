@@ -1,14 +1,14 @@
-<h1 class='m-4'> posts show page</h1>
+<h1> posts show page</h1>
 
  <ul>
         <li>
-          <div class='post-card m-4'>
+          <div class='post-card'>
             <div>
-              <h3>
+              <h3 class='title'>
                 <%= @post.title %>
               </h3>
             </div>
-            <p>
+            <p class='comment'>
               <%= @post.text %>
             </p>
             <div>
@@ -20,12 +20,16 @@
               </span>
             </div>
             <div class="comment">
-            
+            <%= button_to 'Add Like', like_post_user_post_url(@post), method: "put" ,class:'like-btn'%>
             
             <% @post.comments.each do |comment| %>
-              <p>
-            <%= comment.text %>
-            </p>
+              <div class='comment'>
+            comment: <%= comment.text %> by: 
+            <%= comment.user.name %>
+            </div>
+            <% if can? :destroy, comment %>
+           <span> <%=button_to 'Delete Comment' , comment, method: :delete, data: { confirm: 'Are you sure?' }%></span> 
+            <% end %>
             <% end %>
             
             </div>
@@ -33,20 +37,12 @@
         </li>      
     </ul>
 
-     <h1 class='m-4'>Leave your comment here...</h1>
+     <h1>Leave your comment here...</h1>
   <%= form_with url: new_comment_user_post_path do |form| %>
-    <div class="m-4">
+    <div class="mb-3">
       <%= form.text_area :text, class: "form-control" %>
     </div>
-    <div class="m-4">
+    <div class="mb-3">
       <%= form.submit class: "btn btn-primary" %>
     </div>
   <% end %>
-
-   <%= form_with url: like_post_user_post_path do |form| %>
-    <div class="m-4">
-      <%= form.submit "Like" %>
-    </div>
-  <% end %>
-
-

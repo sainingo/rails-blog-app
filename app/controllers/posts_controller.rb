@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
   end
 
   def show
+    # @post = User.find(params[:user_id]).posts.find(params[:id])
     @post = User.find(params[:user_id]).posts.includes(:comments).find(params[:id])
+    authorize! :read, @post
   end
 
   def new
@@ -15,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    authorize! :create, @post
     @user = User.find(params[:user_id])
     add_post = @user.posts.new(post_params)
     add_post.comments_counter = 0
@@ -30,6 +35,16 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.destroy
+    authorize! :read, @post
+
+    flash[:success] = 'Post deleted successfully'
+    redirect_to root_url
   end
 
   private

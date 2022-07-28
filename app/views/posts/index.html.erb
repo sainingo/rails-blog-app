@@ -50,5 +50,7 @@
         <% end %>
       <% end %>
     </ul>
+<% if can? :destroy, Post %>
 
-    <%= link_to 'Create-post', new_user_post_path, class:'btn btn-info' %>
+    <%= link_to 'Create-post', new_user_post_path, class:'btn' %>
+<% end %>

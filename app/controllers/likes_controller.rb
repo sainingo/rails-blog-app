@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  load_and_authorize_resource
+
   def create
     post = Post.find(params[:id])
     like = current_user.likes.create(post:)
@@ -7,6 +9,6 @@ class LikesController < ApplicationController
     else
       flash[:error] = 'like was not added'
     end
-    redirect_to user_post_url
+    redirect_to user_post_path(@post)
   end
 end
