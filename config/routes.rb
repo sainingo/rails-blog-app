@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:destroy]
+ 
 end
 

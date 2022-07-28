@@ -57,6 +57,6 @@ Rails.application.configure do
 
   config.assets.quiet = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.debug_exception_response_format = :api
+  # config.debug_exception_response_format = :api
 
 end

@@ -16,6 +16,7 @@ gem 'pg', '~> 1.1'
 gem 'devise'
 
 gem 'cancancan'
+gem 'devise-jwt'
 
 gem 'ffi', '~> 1.9', '>= 1.9.25'
 
